@@ -232,8 +232,71 @@ header .flex {
 .types-of-repair {
   position: relative;
   background-color: #fff;
+  margin-top: 50px;
   height: 1700px;
   border: 1px dashed black;
+}
+
+.types-of-repair h2 {
+  text-align: center;
+}
+
+.types-of-repair .repairs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-top: 50px;
+  width: 90%;
+  height: 608px;
+  margin: 50px auto 0;
+  border: 1px dashed #e3b873;
+}
+
+@media (max-width: 768px) {
+  .types-of-repair .repairs {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 1480px;
+  }
+}
+
+.types-of-repair .repair {
+  width: 30%;
+  height: 600px;
+  background-color: #e3b873;
+}
+
+@media (max-width: 768px) {
+  .types-of-repair .repair {
+    margin-bottom: 10px;
+    width: 100%;
+    height: 480px;
+  }
+}
+
+.types-of-repair .ask-for-measure {
+  width: 95%;
+  height: 720px;
+  margin-top: 100px;
+  background-color: #e3b873;
+}
+
+@media (max-width: 768px) {
+  .types-of-repair .ask-for-measure {
+    display: none;
+  }
 }
 
 .your-fantasies {
