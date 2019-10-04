@@ -305,6 +305,61 @@ header .flex {
   background-image: linear-gradient(to bottom, #fff 15%, #131313 15%, #131313 90%, #fff 90%);
   height: 1020px;
   border: 1px dashed black;
+  padding: 0 6%;
+}
+
+@media (max-width: 375px) {
+  .your-fantasies {
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #fff), color-stop(50%, #131313));
+    background-image: linear-gradient(to bottom, #fff 50%, #131313 50%);
+    height: 500px;
+  }
+}
+
+.your-fantasies__styles {
+  margin-top: 200px;
+  width: 35%;
+}
+
+@media (max-width: 768px) {
+  .your-fantasies__styles ul {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .your-fantasies__styles {
+    margin-top: 20px;
+  }
+}
+
+.your-fantasies__examples {
+  width: 100%;
+  height: 1020px;
+  background-color: #e3b873;
+}
+
+@media (max-width: 768px) {
+  .your-fantasies__examples {
+    margin-top: 100px;
+    height: 600px;
+  }
+}
+
+@media (max-width: 375px) {
+  .your-fantasies__examples {
+    margin-top: 20px;
+    height: 240px;
+  }
+}
+
+@media (max-width: 768px) {
+  .your-fantasies .flex {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .design-project {
