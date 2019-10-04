@@ -8,6 +8,10 @@
 @import "sass/_components";
 @import "sass/_layout";
 
+body {
+  color:$thirdColor;
+}
+
 .wrapper {
   width: 1440px;
   margin: 0 auto;
@@ -15,3 +19,7 @@
     width: 100%;
   }
 } 
+
+.flex {
+  @include flex(space-beetwen);
+}

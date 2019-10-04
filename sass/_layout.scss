@@ -1,14 +1,46 @@
-header{
+// -------------------------------------------------------------------------------header--------------------------------------------
+.header{
   position:relative;
-  
+  padding-top: 20px;
   background-color: $darkColor;
   height: 830px;
   border: $temporaryBorder;
+  &__top {
+    @include flex(space-between);
+    margin: 0 80px;
+    * {
+      border: $secondTemporaryBorder;
+    }
+    .logo {
+      width: 180px;
+    }
+    nav {
+      width: 580px;
+    }
+    .block-phone {
+      width: 125px;
+    }
+  }
+  &__aside {
+    width: 80px;
+    height: 707px;
+    border: $secondTemporaryBorder;
+  }
+  &__promo {
+    // width: 1356px;
+    flex-grow: 1;
+    height: 707px;
+    border: $secondTemporaryBorder;
+  }
 }
 
+header .flex {
+  margin-top: 20px;
+}
+
+// -------------------------------------------------------------------------------completed-projects---------------------------------
 .completed-projects {
   position:relative;
-  
   background-image: linear-gradient(to bottom, $lightColor 60%, $darkColor 60%);
   height: 1700px;
   border: $temporaryBorder;
@@ -17,7 +49,6 @@ header{
 
 .types-of-repair {
   position:relative;
-  
   background-color: $lightColor;
   height: 1700px;
   border: $temporaryBorder;
@@ -25,7 +56,6 @@ header{
 
 .your-fantasies {
   position:relative;
-  
   background-image: linear-gradient(to bottom, $lightColor 15%, $darkColor 15%, $darkColor 90%, $lightColor 90%);
   height: 1020px;
   border: $temporaryBorder;
@@ -33,7 +63,6 @@ header{
 
 .design-project {
   position:relative;
-  
   background-color: $darkColor;
   height: 1700px;
   border: $temporaryBorder;
@@ -41,7 +70,6 @@ header{
 
 .our-team {
   position:relative;
-  
   background-image: linear-gradient(to bottom, $lightColor 50%, $darkColor 50%);
   height: 920px;
   border: $temporaryBorder;
@@ -49,7 +77,6 @@ header{
 
 .our-clients {
   position:relative;
-  
   background-color: $lightColor;
   height: 800px;
   border: $temporaryBorder;
@@ -57,7 +84,6 @@ header{
 
 .questions {
   position:relative;
-  
   background-image: linear-gradient(to bottom, $lightColor 25%, $darkColor 25%);
   height: 1180px;
   border: $temporaryBorder;
@@ -65,7 +91,6 @@ header{
 
 footer {
   position:relative;
-  
   background-color: $darkColor;
   height: 135px;
   border: $temporaryBorder;

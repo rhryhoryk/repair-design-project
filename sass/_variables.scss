@@ -3,6 +3,14 @@ $lightColor: #fff;
 $thirdColor: #e3b873;
 
 $temporaryBorder: 1px dashed black;
+$secondTemporaryBorder: 1px dashed $thirdColor;
+
+@mixin flex($justify, $align: center, $direction: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
 
 .temporarySPAN {
   position: absolute;
@@ -11,4 +19,5 @@ $temporaryBorder: 1px dashed black;
   text-transform: uppercase;
   font-weight: 800;
   font-family: 'Courier New', Courier, monospace;
+  color: $thirdColor;
 }

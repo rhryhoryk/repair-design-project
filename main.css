@@ -12,13 +12,82 @@
   text-transform: uppercase;
   font-weight: 800;
   font-family: 'Courier New', Courier, monospace;
+  color: #e3b873;
 }
 
-header {
+button {
+  width: 200px;
+  height: 50px;
+  padding: 20px 40px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  background-color: #e3b873;
+  color: #fff;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #ecce9e;
+}
+
+.header {
   position: relative;
+  padding-top: 20px;
   background-color: #131313;
   height: 830px;
   border: 1px dashed black;
+}
+
+.header__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 0 80px;
+}
+
+.header__top * {
+  border: 1px dashed #e3b873;
+}
+
+.header__top .logo {
+  width: 180px;
+}
+
+.header__top nav {
+  width: 580px;
+}
+
+.header__top .block-phone {
+  width: 125px;
+}
+
+.header__aside {
+  width: 80px;
+  height: 707px;
+  border: 1px dashed #e3b873;
+}
+
+.header__promo {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  height: 707px;
+  border: 1px dashed #e3b873;
+}
+
+header .flex {
+  margin-top: 20px;
 }
 
 .completed-projects {
@@ -81,6 +150,10 @@ footer {
   border: 1px dashed black;
 }
 
+body {
+  color: #e3b873;
+}
+
 .wrapper {
   width: 1440px;
   margin: 0 auto;
@@ -90,5 +163,21 @@ footer {
   .wrapper {
     width: 100%;
   }
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-beetwen;
+      -ms-flex-pack: space-beetwen;
+          justify-content: space-beetwen;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 /*# sourceMappingURL=main.css.map */
