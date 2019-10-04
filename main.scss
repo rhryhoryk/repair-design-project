@@ -4,6 +4,14 @@
   box-sizing: border-box;
 } 
 
+.wrapper {
+  width: 1440px;
+  margin: 0 auto;
+  @media (max-width: 1440px) {
+    width: 100%;
+  }
+} 
+
 @import "sass/_variables";
 @import "sass/_components";
 @import "sass/_layout";
@@ -12,13 +20,7 @@ body {
   color:$thirdColor;
 }
 
-.wrapper {
-  width: 1440px;
-  margin: 0 auto;
-  @media (max-width: 1440px) {
-    width: 100%;
-  }
-} 
+
 
 .flex {
   @include flex(space-beetwen);

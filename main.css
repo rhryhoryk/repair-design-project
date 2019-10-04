@@ -5,6 +5,17 @@
           box-sizing: border-box;
 }
 
+.wrapper {
+  width: 1440px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1440px) {
+  .wrapper {
+    width: 100%;
+  }
+}
+
 .temporarySPAN {
   position: absolute;
   bottom: 0;
@@ -110,10 +121,112 @@ header .flex {
 
 .completed-projects {
   position: relative;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(60%, #fff), color-stop(60%, #131313));
-  background-image: linear-gradient(to bottom, #fff 60%, #131313 60%);
+  padding-top: 40px;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(60%, #131313), color-stop(60%, #fff));
+  background-image: linear-gradient(to bottom, #131313 60%, #fff 60%);
   height: 1700px;
   border: 1px dashed black;
+}
+
+.completed-projects__grid {
+  height: 550px;
+  margin-left: 7%;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 4%;
+  -ms-grid-rows: 25px (150px)[3];
+  -ms-grid-columns: 31% 65%;
+      grid-template: 25px repeat(3, 150px)/31% 65%;
+      grid-template-areas: ". list" "info slider" "table slider" ". slider";
+}
+
+.completed-projects__grid .completed-projects__info {
+  border: 1px dashed #e3b873;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: info;
+}
+
+.completed-projects__grid .completed-projects__table {
+  border: 1px dashed #e3b873;
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: table;
+}
+
+.completed-projects__grid .completed-projects__list {
+  border: 1px dashed #e3b873;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: list;
+}
+
+.completed-projects__grid .completed-projects__slider {
+  border: 1px dashed #e3b873;
+  background-color: #e3b873;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 2;
+  grid-area: slider;
+}
+
+@media (max-width: 768px) {
+  .completed-projects__grid {
+    height: auto;
+    margin: 0 10%;
+    display: -ms-grid;
+    display: grid;
+    grid-gap: 4%;
+    -ms-grid-rows: (240px)[2] 150px;
+    -ms-grid-columns: 100%;
+        grid-template: repeat(2, 240px) 150px/100%;
+        grid-template-areas: "info" "slider" "table";
+  }
+  .completed-projects__grid .completed-projects__list {
+    display: none;
+  }
+}
+
+@media (max-width: 375px) {
+  .completed-projects__grid {
+    margin: 4%;
+  }
+}
+
+@media (max-width: 768px) {
+  .completed-projects {
+    background: #131313;
+  }
+}
+
+.completed-projects .online-control {
+  width: 60%;
+  margin: 3% auto;
+}
+
+.completed-projects .online-control h2 {
+  text-align: center;
+}
+
+.completed-projects .online-control__video {
+  margin: 70px 0 95px;
+  width: 100%;
+  height: 434px;
+  border: 1px dashed #e3b873;
+}
+
+.completed-projects .online-control__text {
+  text-align: center;
+}
+
+.completed-projects .online-control__form {
+  margin-top: 80px;
+}
+
+@media (max-width: 768px) {
+  .completed-projects .online-control {
+    width: 90%;
+  }
 }
 
 .types-of-repair {
@@ -170,17 +283,6 @@ footer {
 
 body {
   color: #e3b873;
-}
-
-.wrapper {
-  width: 1440px;
-  margin: 0 auto;
-}
-
-@media (max-width: 1440px) {
-  .wrapper {
-    width: 100%;
-  }
 }
 
 .flex {
