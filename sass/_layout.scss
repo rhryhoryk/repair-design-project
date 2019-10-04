@@ -32,7 +32,23 @@
     height: 707px;
     border: $secondTemporaryBorder;
   }
+  @media (max-width: 768px){
+    &__top {
+      margin: 0;
+      justify-content: space-evenly;
+      nav {
+        display: none;
+      }
+      button {
+        display: none;
+      }
+    }
+    &__aside {
+      display: none;
+    }
+  }
 }
+
 
 header .flex {
   margin-top: 20px;
