@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.temporarySPAN {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+header {
+  position: relative;
+  background-color: #131313;
+  height: 830px;
+  border: 1px dashed black;
+}
+
+.completed-projects {
+  position: relative;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(60%, #fff), color-stop(60%, #131313));
+  background-image: linear-gradient(to bottom, #fff 60%, #131313 60%);
+  height: 1700px;
+  border: 1px dashed black;
+}
+
+.types-of-repair {
+  position: relative;
+  background-color: #fff;
+  height: 1700px;
+  border: 1px dashed black;
+}
+
+.your-fantasies {
+  position: relative;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(15%, #fff), color-stop(15%, #131313), color-stop(90%, #131313), color-stop(90%, #fff));
+  background-image: linear-gradient(to bottom, #fff 15%, #131313 15%, #131313 90%, #fff 90%);
+  height: 1020px;
+  border: 1px dashed black;
+}
+
+.design-project {
+  position: relative;
+  background-color: #131313;
+  height: 1700px;
+  border: 1px dashed black;
+}
+
+.our-team {
+  position: relative;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #fff), color-stop(50%, #131313));
+  background-image: linear-gradient(to bottom, #fff 50%, #131313 50%);
+  height: 920px;
+  border: 1px dashed black;
+}
+
+.our-clients {
+  position: relative;
+  background-color: #fff;
+  height: 800px;
+  border: 1px dashed black;
+}
+
+.questions {
+  position: relative;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(25%, #fff), color-stop(25%, #131313));
+  background-image: linear-gradient(to bottom, #fff 25%, #131313 25%);
+  height: 1180px;
+  border: 1px dashed black;
+}
+
+footer {
+  position: relative;
+  background-color: #131313;
+  height: 135px;
+  border: 1px dashed black;
+}
+
+.wrapper {
+  width: 1440px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1440px) {
+  .wrapper {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=main.css.map */

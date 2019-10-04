@@ -1,0 +1,72 @@
+header{
+  position:relative;
+  
+  background-color: $darkColor;
+  height: 830px;
+  border: $temporaryBorder;
+}
+
+.completed-projects {
+  position:relative;
+  
+  background-image: linear-gradient(to bottom, $lightColor 60%, $darkColor 60%);
+  height: 1700px;
+  border: $temporaryBorder;
+
+}
+
+.types-of-repair {
+  position:relative;
+  
+  background-color: $lightColor;
+  height: 1700px;
+  border: $temporaryBorder;
+}
+
+.your-fantasies {
+  position:relative;
+  
+  background-image: linear-gradient(to bottom, $lightColor 15%, $darkColor 15%, $darkColor 90%, $lightColor 90%);
+  height: 1020px;
+  border: $temporaryBorder;
+}
+
+.design-project {
+  position:relative;
+  
+  background-color: $darkColor;
+  height: 1700px;
+  border: $temporaryBorder;
+}
+
+.our-team {
+  position:relative;
+  
+  background-image: linear-gradient(to bottom, $lightColor 50%, $darkColor 50%);
+  height: 920px;
+  border: $temporaryBorder;
+}
+
+.our-clients {
+  position:relative;
+  
+  background-color: $lightColor;
+  height: 800px;
+  border: $temporaryBorder;
+}
+
+.questions {
+  position:relative;
+  
+  background-image: linear-gradient(to bottom, $lightColor 25%, $darkColor 25%);
+  height: 1180px;
+  border: $temporaryBorder;
+}
+
+footer {
+  position:relative;
+  
+  background-color: $darkColor;
+  height: 135px;
+  border: $temporaryBorder;
+}
