@@ -12,3 +12,30 @@ button {
     background-color: lighten($thirdColor, 10%);
   }
 }
+
+.block {
+  @include flex (space-between);
+  width: 90%;
+  height: 608px;
+  margin: 0 auto;
+  border: $secondTemporaryBorder;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    width: 95%;
+  }
+}
+
+.box {
+  width: 30%;
+  height: 600px;
+  background-color: $thirdColor;
+  @media (max-width: 768px) {
+    width: 50%;
+    &:not(:first-of-type) {
+      margin-top: 59px;
+    }
+  }
+  @media (max-width: 375px) {
+    width: 100%;
+  }
+}

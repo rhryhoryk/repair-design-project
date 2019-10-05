@@ -1,64 +1,77 @@
-// -------------------------------------------------------------------------------header--------------------------------------------
+// ----------------------------------------------------------------header
 .header{
-  position:relative;
-  padding-top: 20px;
-  background-color: $darkColor;
-  height: 830px;
   border: $temporaryBorder;
-  &__top {
-    @include flex(space-between);
-    margin: 0 80px;
-    * {
-      border: $secondTemporaryBorder;
-    }
-    .logo {
-      width: 180px;
-    }
-    nav {
-      width: 580px;
-    }
-    .block-phone {
-      width: 125px;
+  background-color: $darkColor;
+  &__block {
+    padding: 24px 8% 22px 6%;
+    width: 100%;
+    height: 83px;
+    @media (max-width: 768px) {
+      flex-direction: row;
+      width: 100%;
     }
   }
-  &__aside {
-    width: 80px;
-    height: 707px;
-    border: $secondTemporaryBorder;
-  }
-  &__promo {
-    // width: 1356px;
-    flex-grow: 1;
-    height: 707px;
-    border: $secondTemporaryBorder;
-  }
-  @media (max-width: 768px){
-    &__top {
-      margin: 0;
-      justify-content: space-evenly;
-      nav {
-        display: none;
-      }
-      button {
-        display: none;
-      }
+  &__main-menu {
+    @media (max-width: 768px) {
+      display: none;
     }
-    &__aside {
+  }
+  &__button {
+    @media (max-width: 768px) {
       display: none;
     }
   }
 }
+// ______________________________________________________________________________________________
+// ----------------------------------------------------------------promo
+.promo {
+  border: $temporaryBorder;
+  background-color: $darkColor;
+  &__outer {
+    position: relative;
+    @include flex (space-between);
+  }
+  &__aside {
+    width: 6%;
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+  &__inner {
+    width: 94%;
+    padding: 194px 43% 208px 4%; 
+    border: $secondTemporaryBorder;
+    @media (max-width: 768px) {
+      width: 90%;
+      margin: 0 auto;
+      padding: 20px; 
 
-header .flex {
-  margin-top: 20px;
+    }
+    @media (max-width: 375px) {
+      width: 90%;
+      margin: 0 auto;
+    }
+  }
+  &__button-block {
+    width: 100%;
+    height: 51px;
+  }
+  &__scroll {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: $thirdColor;
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
 }
-
-// -------------------------------------------------------------------------------completed-projects---------------------------------
-.completed-projects {
-  position:relative;
+// ______________________________________________________________________________________________
+// ----------------------------------------------------------------projects
+.projects {
   padding-top: 40px;
-  background-image: linear-gradient(to bottom, $darkColor 60%, $lightColor 60%);
-  height: 1700px;
+  background: $darkColor;
+  // height: 1700px;
   border: $temporaryBorder;
   
   &__grid {
@@ -71,19 +84,19 @@ header .flex {
                           "info slider"
                           "table slider"
                           ". slider";
-    .completed-projects__info {
+    .projects__info {
       border: $secondTemporaryBorder;
       grid-area: info;
     }
-    .completed-projects__table {
+    .projects__table {
       border: $secondTemporaryBorder;
       grid-area: table;
     }
-    .completed-projects__list {
+    .projects__list {
       border: $secondTemporaryBorder;
       grid-area: list;
     }
-    .completed-projects__slider {
+    .projects__slider {
       border: $secondTemporaryBorder;
       background-color: $thirdColor;
       grid-area: slider;
@@ -97,7 +110,7 @@ header .flex {
       grid-template-areas:  "info"
                             "slider"
                             "table";
-      .completed-projects__list {
+      .projects__list {
         display: none;
       }
     };
@@ -109,155 +122,256 @@ header .flex {
   @media (max-width: 768px) {
    background: $darkColor;
   }
-  .online-control {
-    width: 60%;
-    margin: 3% auto;
-    h2 {
-      text-align: center;
-    }
-    &__video {
-      margin: 70px 0 95px;
-      width: 100%;
-      height: 434px;
-      border: $secondTemporaryBorder;
-    }
-    &__text{
-      text-align: center;
-    }
-    &__form {
-      margin-top: 80px;
-    }
-    @media (max-width: 768px) {
-      width: 90%;
-    }
-  }
+  
 }
-// -------------------------------------------------------------------------------types-of-repair -----------------------------------
-
-.types-of-repair {
-  position:relative;
-  background-color: $lightColor;
-  margin-top: 50px;
-  height: 1700px;
+// ______________________________________________________________________________________________
+// ----------------------------------------------------------------online-control
+.online-control {
+  background-image: linear-gradient(to bottom, $darkColor 40%, $lightColor 40%);
   border: $temporaryBorder;
-
-  h2 {
+  &__inner {
+    width: 60%;
+    margin: 3% auto; 
+  }
+  h3 {
     text-align: center;
   }
-
-  .repairs {
-    @include flex(space-between);
-    margin-top: 50px;
-    width: 90%;
-    height: 608px;
-    margin: 50px auto 0;
+  &__video {
+    margin: 70px 0 95px;
+    width: 100%;
+    height: 434px;
     border: $secondTemporaryBorder;
-    @media (max-width: 768px) {
-      flex-direction: column;
-      height: 1480px;
-    }
   }
-
-  .repair {
-    width: 30%;
-    height: 600px;
-    background-color: $thirdColor;
-    @media (max-width: 768px) {
-      margin-bottom: 10px;
-      width: 100%;
-      height: 480px;
-    }
+  &__text{
+    text-align: center;
   }
-
-  .ask-for-measure {
+  &__form {
+    margin-top: 80px;
+  }
+}
+// ______________________________________________________________________________________________
+// ----------------------------------------------------------------repair
+.repair {
+  background-color: $lightColor;
+  margin-top: 50px;
+  border: $temporaryBorder;
+  h3 {
+    text-align: center;
+  }
+}
+// ______________________________________________________________________________________________
+// ----------------------------------------------------------------request
+.request {
+  margin-top: 124px;
+  border: $temporaryBorder;
+  &__inner {
+    @include flex (space-between);
     width: 95%;
     height: 720px;
-    margin-top: 100px;
+    border: $secondTemporaryBorder;
+  }
+  &__info {
+    width: 54%;
+    height: 690px;
     background-color: $thirdColor;
-    @media (max-width: 768px) {
+    @media (max-width: 1200px) {
       display: none;
     }
   }
-}
-// -------------------------------------------------------------------------------your-fantasies -----------------------------------
-
-.your-fantasies {
-  position:relative;
-  background-image: linear-gradient(to bottom, $lightColor 15%, $darkColor 15%, $darkColor 90%, $lightColor 90%);
-  height: 1020px;
-  border: $temporaryBorder;
-  padding: 0 6%;
-  @media (max-width: 375px) {
-    background-image: linear-gradient(to bottom, $lightColor 50%, $darkColor 50%);
-    height: 500px;
-  };
-
-  &__styles {
-    margin-top: 200px;
-    width: 35%;
-    ul {
-      @media (max-width: 768px){
-        display: none;
-    } 
+  &__form {
+    width: 506px;
+    height: 509px;
+    background-color: $thirdColor;
+    @media (max-width: 1200px) {
+      margin: auto;
     }
-    @media (max-width: 768px){
-      margin-top: 20px;
-  } 
+  }
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+// ______________________________________________________________________________________________
+// ----------------------------------------------------------------fantasies
+.fantasies {
+  margin-top: 100px;
+  border: $temporaryBorder;
+  background-image: linear-gradient(to bottom, $lightColor 10%,  $darkColor 10%, $darkColor 95%,  $lightColor 95%);
+  @media (max-width: 375px) {
+    background-image: linear-gradient(to bottom, $lightColor 50%,  $darkColor 50%);
   };
+  &__inner {
+    padding: 0 8%;
+    @include flex (space-between);
+    @media (max-width: 375px) {
+      flex-direction: column;
+      padding: 0;
+    }
+  }
+  &__left {
+    width: 30%;
+    height: 630px;
+    background-color: $thirdColor;
+    @media (max-width: 375px) {
+      height: 65px;
+      margin-bottom: 24px;
+    }
+  }
+  &__list {
+    @media (max-width: 375px) {
+      display: none;
+    }
+  }
   &__examples {
-    width: 100%;;
-    height: 1020px;
+    width: 60%;
+    height: 1000px;
     background-color: $thirdColor;
     @media (max-width: 768px) {
-      margin-top: 100px; 
-      height: 600px;
+      height: 500px;
     }
     @media (max-width: 375px) {
-      margin-top: 20px; 
-      height: 240px;
+      width: 95%;
+      height: 242px;
     }
   }
-  .flex {
-    @media (max-width: 768px){
-      flex-direction: column;
-  } 
+}
+// ______________________________________________________________________________________________
+// ----------------------------------------------------------------tariff
+.tariff {
+  margin-top: 100px;
+  background-image: linear-gradient(to bottom, $lightColor 50%,  $darkColor 50%);
+  @media (max-width: 375px) {
+  background: $darkColor;
   }
- 
-
+  h3 {
+    text-align: center;
+  }
+  p {
+    text-align: center;
+    margin-bottom: 40px;
+  }
 }
-// -------------------------------------------------------------------------------design-project -----------------------------------
-
-.design-project {
-  position:relative;
-  background-color: $darkColor;
-  height: 1700px;
-  border: $temporaryBorder;
-}
-
-.our-team {
-  position:relative;
-  background-image: linear-gradient(to bottom, $lightColor 50%, $darkColor 50%);
-  height: 920px;
-  border: $temporaryBorder;
-}
-
-.our-clients {
-  position:relative;
-  background-color: $lightColor;
+// ______________________________________________________________________________________________
+// ----------------------------------------------------------------goals
+.goals {
+  width: 100%;
   height: 800px;
-  border: $temporaryBorder;
+  margin: 0 auto;
+  background-color: $darkColor;
+  &__inner {
+    display: grid;
+    grid-template: repeat(3, 70px) repeat(3, 120px) / 30% repeat(3, 22%);
+    grid-template-areas:  "g-heading . . ."
+                          ". g-table g-table g-table"
+                          "g-inf0-heading g-table g-table g-table"
+                          "g-inf0-text g-img g-img g-img"
+                          ". g-img g-img g-img"
+                          ". g-img g-img g-img";
+                          
+    grid-gap: 1%;
+    width: 90%;
+    height: 686px;
+    margin: 0 auto;
+    padding-top: 30px;
+    border: $secondTemporaryBorder;
+  }
+  h3 {
+    grid-area: g-heading;
+  }
+  &__heading {
+    grid-area: g-inf0-heading;
+  }
+  &__text {
+    grid-area: g-inf0-text;
+  }
+  &__table {
+    grid-area: g-table;
+  }
+  &__imgs {
+    grid-area: g-img;
+    background-color: $thirdColor;
+  }
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
-
+// ______________________________________________________________________________________________
+// ----------------------------------------------------------------team
+.team {
+  background-image: linear-gradient(to bottom, $darkColor 50%, $lightColor 50%);
+  border: $temporaryBorder;
+  padding-top: 75px;
+  @media (max-width: 768px) {
+    background: $darkColor;
+  }
+  h3, p {
+    text-align: center;
+  }
+  &__block {
+    width: 80%;
+  }
+}
+// ______________________________________________________________________________________________
+// ----------------------------------------------------------------clients
+.clients {
+  margin-top: 88px;
+  background-color: $lightColor;
+  border: $temporaryBorder;
+  h3, p {
+    text-align: center;
+  }
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+// ______________________________________________________________________________________________
+// ----------------------------------------------------------------questions
 .questions {
-  position:relative;
-  background-image: linear-gradient(to bottom, $lightColor 25%, $darkColor 25%);
-  height: 1180px;
+  margin-top: 115px;
+  background-image: linear-gradient(to bottom, $lightColor 50%, $darkColor 50%);
   border: $temporaryBorder;
+  &__form {
+    width: 883px;
+    height: 445px;
+    margin: 0 auto;
+    background-color: $thirdColor;
+    @media (max-width: 1000px) {
+      width: 90%;
+    }
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+}
+// ______________________________________________________________________________________________
+// ----------------------------------------------------------------contacts
+.contacts {
+  padding-top: 52px;
+  background: $darkColor;
+  border: $temporaryBorder;
+  p {
+    text-align: center;
+  }
+  &__map {
+    display: block;
+    width: 80%;
+    height: 460px;
+    margin: 90px auto;
+    background-color: $thirdColor;
+    @media (max-width: 768px) {
+      width: 95%;
+    }
+  }
 }
 
+// ______________________________________________________________________________________________
+// ----------------------------------------------------------------footer
 footer {
   position:relative;
   background-color: $darkColor;
   height: 135px;
   border: $temporaryBorder;
+  @media (max-width: 375px) {
+    display: none;
+  }
 }
+// ______________________________________________________________________________________________
