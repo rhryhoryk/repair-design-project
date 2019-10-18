@@ -1,15 +1,14 @@
 button {
   width: 200px;
   height: 50px;
-  padding: 20px 40px;
   outline: none;
   border: none;
-  border-radius: 5px;
-  background-color: $thirdColor;
-  color: $lightColor;
+  border-radius: 2px;
+  background-color: $goldenColor;
+  color: $whiteColor;
   &:hover {
     cursor: pointer;
-    background-color: lighten($thirdColor, 10%);
+    background-color: lighten($goldenColor, 10%);
   }
 }
 
@@ -18,7 +17,6 @@ button {
   width: 90%;
   height: 608px;
   margin: 0 auto;
-  border: $secondTemporaryBorder;
   @media (max-width: 768px) {
     flex-direction: column;
     width: 95%;
@@ -28,7 +26,7 @@ button {
 .box {
   width: 30%;
   height: 600px;
-  background-color: $thirdColor;
+  background-color: $goldenColor;
   @media (max-width: 768px) {
     width: 50%;
     &:not(:first-of-type) {

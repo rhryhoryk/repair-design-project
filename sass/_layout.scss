@@ -1,6 +1,5 @@
 // ----------------------------------------------------------------header
 .header{
-  border: $temporaryBorder;
   background-color: $darkColor;
   &__block {
     padding: 24px 8% 22px 6%;
@@ -11,21 +10,85 @@
       width: 100%;
     }
   }
+  &__logo {
+    font-family: 'FuturaDemiC';
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: $goldenColor;
+    @media (max-width: 1100px) {
+      font-size: 12px;
+      line-height: 14px;
+    }
+  }
   &__main-menu {
     @media (max-width: 768px) {
       display: none;
     }
   }
-  &__button {
+  &__phone__anchor {
+    font-family: FuturaDemiC;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: right;
+    text-decoration-line: underline;
+    color: $goldenColor;
+    &:hover {
+      color: lighten($goldenColor, 10%);
+    }
+    @media (max-width: 1100px) {
+      font-size: 12px;
+      line-height: 14px;
+    }
     @media (max-width: 768px) {
+      color: $whiteColor;
+      &:hover {
+        color: $goldenColor;
+      }
+    }
+  }
+  &__button {
+    width: 11%;
+    height: 37px;
+    padding: 0;
+    @media (max-width: 1100px) {
+      font-size: 12px;
+      line-height: 14px;
+    }
+    @media (max-width: 900px) {
       display: none;
+    }
+  }
+}
+
+.main-menu {
+  width: 45%;
+  &__list {
+    @include flex (space-between);
+  }
+  &__item {
+    margin-right: 4%;
+    list-style: none;
+  }
+  &__anchor {
+    font-family: 'FuturaBookC';
+    font-size: 14px;
+    line-height: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $whiteColor;
+    &:hover {
+      color: $goldenColor;
+    }
+    @media (max-width: 1100px) {
+      font-size: 12px;
+      line-height: 14px;
     }
   }
 }
 // ______________________________________________________________________________________________
 // ----------------------------------------------------------------promo
 .promo {
-  border: $temporaryBorder;
   background-color: $darkColor;
   &__outer {
     position: relative;
@@ -33,6 +96,26 @@
   }
   &__aside {
     width: 6%;
+    & a {
+      display: block;
+      transform: rotate(90deg);
+      text-decoration: none;
+      font-family: 'FuturaDemiC';
+      font-size: 14px;
+      line-height: 16px;
+      text-transform: uppercase;
+      color: $goldenColor;
+      &::after {
+        display: block;
+        position: relative;
+        top: -10px;
+        left: 90px;
+        content: '';
+        width: 50px;
+        height: 2px;
+        background-color: $goldenColor;
+      }
+    }
     @media (max-width: 768px) {
       display: none;
     }
@@ -40,7 +123,8 @@
   &__inner {
     width: 94%;
     padding: 194px 43% 208px 4%; 
-    border: $secondTemporaryBorder;
+    background-image: url('assets/img/promo-background.png');
+    background-size: cover;
     @media (max-width: 768px) {
       width: 90%;
       margin: 0 auto;
@@ -49,104 +133,334 @@
     }
     @media (max-width: 375px) {
       width: 90%;
+      padding: 85px 0; 
       margin: 0 auto;
     }
   }
+  &__heading {
+    margin-bottom: 20px;
+    font-family: 'Yeseva One';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 53px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    & span {
+      color: $goldenColor;
+    }
+    @media (max-width: 768px) {
+      width: 100%;
+      font-size: 23px;
+      line-height: 132.83%;
+    }
+  }
+  &__text {
+    margin-bottom: 40px;
+    font-family: 'FuturaBookC';
+    font-size: 22px;
+    line-height: 30px;
+    color: $whiteColor;
+    @media (max-width: 768px) {
+      font-size: 18px;
+      line-height: 135.84%;
+    }
+  }
   &__button-block {
-    width: 100%;
+    width: 434px;
     height: 51px;
+    margin: 0;
+    @media (max-width: 768px) {
+      width: 90%;
+      height: auto;
+      margin: 0 auto;
+    }
+    & button {
+      font-family: 'FuturaDemiC';
+      font-size: 13px;
+      line-height: 15px;
+      text-align: center;
+      @media (max-width: 768px) {
+        width: 100%;
+        height: 51px;
+      }
+    }
+    & button:last-of-type {
+      border: 1px solid $whiteColor;
+      background-color: transparent;
+      @media (max-width: 768px) {
+        margin-top: 26px;
+      }
+    }
+
+    
   }
   &__scroll {
     position: absolute;
+    width: 247px;
+    height: 97px;
     bottom: 0;
     left: 0;
-    background-color: $thirdColor;
+    padding: 34px 49px;
+    background-color: $darkColor;
+    font-family: "Yeseva One";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+    text-transform: uppercase;
+    text-align: center;
+    vertical-align: middle;
+    color: $whiteColor;
+    & span::after {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: block;
+      content: "\2228";
+      width: 30px;
+      height: 30px;
+      border: 2px solid $goldenColor;
+      border-radius: 50%;
+      font-size: 20px;
+      color: $goldenColor;
+      
+    }
     @media (max-width: 768px) {
       display: none;
     }
   }
+}
+span:hover::after {
+  cursor: pointer;
+  color: $whiteColor;
 }
 // ______________________________________________________________________________________________
 // ----------------------------------------------------------------projects
 .projects {
   padding-top: 40px;
   background: $darkColor;
-  // height: 1700px;
-  border: $temporaryBorder;
-  
-  &__grid {
-    height: 550px;
-    margin-left: 7%;
-    display: grid;
-    grid-gap: 4%;
-    grid-template: 25px repeat(3, 150px) / 31% 65%;
-    grid-template-areas:  ". list"
-                          "info slider"
-                          "table slider"
-                          ". slider";
-    .projects__info {
-      border: $secondTemporaryBorder;
-      grid-area: info;
-    }
-    .projects__table {
-      border: $secondTemporaryBorder;
-      grid-area: table;
-    }
-    .projects__list {
-      border: $secondTemporaryBorder;
-      grid-area: list;
-    }
-    .projects__slider {
-      border: $secondTemporaryBorder;
-      background-color: $thirdColor;
-      grid-area: slider;
-    }
-    @media (max-width: 768px) {
-      height: auto;
-      margin: 0 10%;
-      display: grid;
-      grid-gap: 4%;
-      grid-template: repeat(2,240px) 150px / 100%;
-      grid-template-areas:  "info"
-                            "slider"
-                            "table";
-      .projects__list {
-        display: none;
-      }
-    };
-    @media (max-width: 375px) {
-      margin: 4%;
+  @media (max-width: 768px) {
+    background: $darkColor;
+   }
+  @media (max-width: 375px) {
+    // margin: 4%;
+  }
+
+  &__list {
+    @include flex(space-between);
+  }
+  &__item {
+    list-style: none;
+    font-family: 'Yeseva One';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.3);
+    &:hover {
+      cursor: pointer;
+      border-bottom: 1px solid $goldenColor;
+      color: $goldenColor;
     }
   }
 
-  @media (max-width: 768px) {
-   background: $darkColor;
+  &__heading {
+    margin-bottom: 34px;
+    font-family: 'Yeseva One';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 27px;
+    line-height: 37px;
+    letter-spacing: -0.07em;
+    text-transform: uppercase;
+    color: $goldenColor;
+    @media (max-width: 768px) {
+      width: 30%;
+      margin: 0 auto;;
+      font-size: 22px;
+      line-height: 138.6%;
+      text-align: center;
+    }
   }
-  
+  &__text {
+    font-family: 'FuturaBookC';
+    font-size: 18px;
+    line-height: 29px;
+    color: $whiteColor;
+    @media (max-width: 768px) {
+      font-size: 14px;
+      line-height: 158.48%;
+      text-align: center;
+    }
+  }
 }
+
+.projects__table {
+  & h4 {
+    font-family: 'Yeseva One';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+    text-transform: uppercase;
+    color: $goldenColor;
+  }
+
+  & p {
+    margin-bottom: 34px;
+    font-family: 'FuturaBookC';
+    font-size: 15px;
+    line-height: 20px;
+    color: $whiteColor;
+  }
+}
+
+.projects__slider {
+  @include flex (space-between);
+  overflow: hidden;
+  &__picture {
+    margin-right: 20px;
+    background-size: cover;;
+  }
+}
+
+.projects__grid {
+  height: 550px;
+  margin-left: 7%;
+  display: grid;
+  grid-gap: 2%;
+  grid-template: 25px repeat(3, 150px) / 31% 65%;
+  grid-template-areas:  ". list"
+                        "info slider"
+                        "info slider"
+                        "table slider";
+  .projects__info {
+    grid-area: info;
+  }
+  .projects__table {
+    grid-area: table;
+  }
+  .projects__list {
+    grid-area: list;
+  }
+  .projects__slider {
+    grid-area: slider;
+  }
+  @media (max-width: 768px) {
+    height: 700px;
+    margin: 0 10%;
+    display: grid;
+    grid-gap: 4%;
+    grid-template: 150px 250px 150px / 100%;
+    grid-template-areas:  "info"
+                          "slider"
+                          "table";
+    .projects__list {
+      display: none;
+    }
+  }
+  };
 // ______________________________________________________________________________________________
 // ----------------------------------------------------------------online-control
 .online-control {
   background-image: linear-gradient(to bottom, $darkColor 40%, $lightColor 40%);
-  border: $temporaryBorder;
+  @media (max-width: 768px) {
+    background: $darkColor;
+  }
   &__inner {
     width: 60%;
-    margin: 3% auto; 
+    margin: 0 auto; 
+    @media (max-width: 768px) {
+      width: 90%;
+    }
   }
-  h3 {
+  &__heading {
+    font-family: 'Yeseva One';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 28px;
     text-align: center;
+    text-transform: uppercase;
+    color: $whiteColor;
+    @media (max-width: 768px) {
+      font-size: 22px;
+      line-height: 138.6%;
+    }
+  }
+  &__icon {
+    width: 32.77px;
+    height: 28px;
+    margin: 12px auto 31px;
   }
   &__video {
-    margin: 70px 0 95px;
+    margin: 0 auto 95px;
     width: 100%;
     height: 434px;
-    border: $secondTemporaryBorder;
+    @media (max-width: 768px) {
+      height: 250px;
+    }
+    @media (max-width: 480px) {
+      height: 200px;
+    }
   }
   &__text{
+    font-family: 'FuturaBookC';
+    font-size: 20px;
+    line-height: 34px;
     text-align: center;
+    color: $darkColor;
+    @media (max-width: 768px) {
+      font-size: 14px;
+      line-height: 169.8%;
+      color: $whiteColor;
+    }
   }
   &__form {
-    margin-top: 80px;
+    width: 70%;
+    height: 50px;
+    margin: 80px auto 0;
+    @include flex (space-between);
+    div {
+      width: 32%;
+      label {
+        font-family: 'FuturaBookC';
+        font-size: 15px;
+        line-height: 20px;
+        color: rgba(54, 54, 54, 0.5);
+      }
+      input[type=text], input[type=tel] {
+        padding: 2px;
+        border: none;
+        border-bottom: 1px solid rgba(54, 54, 54, 0.5);
+        font-family: 'FuturaBookC';
+        font-size: 18px;
+        line-height: 24px;
+        color: #363636;
+
+      }
+    }
+    input[type=submit] {
+      width: 27%;
+      height: 100%;
+      border: none;
+      font-family: 'FuturaDemiC';
+      font-size: 15px;
+      line-height: 26px;
+      text-align: center;
+      text-transform: uppercase;
+      background-color: $goldenColor;
+      color: $whiteColor;
+      &:hover {
+        cursor: pointer;
+        background-color: lighten($goldenColor, 10%);
+      }
+    }
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 }
 // ______________________________________________________________________________________________
@@ -154,54 +468,274 @@
 .repair {
   background-color: $lightColor;
   margin-top: 50px;
-  border: $temporaryBorder;
-  h3 {
+  &__heading {
+    font-family: 'Yeseva One';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 28px;
     text-align: center;
+    text-transform: uppercase;
   }
+  &__icon {
+    display: block;
+    width: 114px;
+    margin: 13px auto 30px;
+  }
+  &__block {
+    height: 421px;
+    margin-bottom: 180px;
+    @media (max-width: 768px) {
+      height: 1700px;
+    }
+  }
+  &__box {
+    position: relative;
+    height: 421px;
+    background-size: cover;
+    @media (max-width: 768px) {
+      width: 90%;
+      height: 365px;
+    }
+  }
+  &__box--inner {
+    position: absolute;
+    width: 90%;
+    height: 286px;
+    padding: 25px 29px 49px 31px;
+    bottom: -160px;
+    left: 20px;
+    box-shadow: 1px 1px 15px #959595;
+    background-color: $whiteColor;
+    & h4 {
+      font-family: 'Yeseva One';
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 25px;
+      color: $darkColor;
+    }
+  }
+  &__list {
+    margin-top: 13px;
+    margin-left: 13px;
+  }
+  &__list__item {
+    font-family: 'FuturaBookC';
+    font-size: 15px;
+    line-height: 25px;
+    color: #959595;
+    @media (max-width: 1000px) {
+      font-size: 13px;
+      line-height: 169.8%;
+    }
+  }
+  &__button {
+    width: 70%;
+    padding: 7px;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    font-family: 'Yeseva One';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+    text-transform: uppercase;
+    color: $whiteColor;
+    @media (max-width: 1000px) {
+      font-size: 12px;
+      line-height: 138.6%;
+    }
+  }
+}
+
+.repair__box:first-child {
+  background-image: url('assets/img/repair-img-1.png')
+}
+.repair__box:nth-child(2) {
+  background-image: url('assets/img/repair-img-2.png')
+}
+.repair__box:last-child {
+  background-image: url('assets/img/repair-img-3.png')
 }
 // ______________________________________________________________________________________________
 // ----------------------------------------------------------------request
 .request {
   margin-top: 124px;
-  border: $temporaryBorder;
+  @media (max-width: 768px) {
+    display: none;
+  }
   &__inner {
     @include flex (space-between);
     width: 95%;
     height: 720px;
-    border: $secondTemporaryBorder;
   }
   &__info {
+    position: relative;
     width: 54%;
     height: 690px;
-    background-color: $thirdColor;
+    background-image: url('assets/img/request__info-background.png');
+    background-size: cover;;
     @media (max-width: 1200px) {
       display: none;
     }
+    &__list {
+      position: absolute;
+      left: -30%;
+      width: 100%;
+      height: 636px;
+      margin-top: 70px;
+      border: 2px solid $goldenColor;
+      border-left-width: 0;
+      border-top-width: 0;
+      border-bottom-width: 0;
+      border-radius: 50%;
+    }
+    &__item {
+      position: absolute;
+      left: 150px;
+      width: 60%;
+      list-style: none;
+      font-family: 'FuturaMediumC';
+      font-size: 18px;
+      line-height: 21px;
+      color: $darkColor;
+      &::before {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+        background-color: $goldenColor;
+        border-radius: 50%;
+        box-shadow: 2px 2px 5px 25px #fff, -2px -2px 5px 25px #fff;
+        text-align: center;
+        vertical-align: middle;
+        color: $whiteColor;
+      }
+    }
   }
   &__form {
+    @include flex (space-evenly);
+    flex-direction: column;
     width: 506px;
     height: 509px;
-    background-color: $thirdColor;
+    padding: 20px 30px;
+    background-color: $darkColor;
     @media (max-width: 1200px) {
       margin: auto;
     }
+    h3 {
+      width: 60%;
+      margin: 0 auto 39px;
+      font-family: FuturaDemiC;
+      font-size: 20px;
+      line-height: 25px;
+      text-align: center;
+      color: $whiteColor;
+    }
+    div {
+      width: 100%;
+    }
+    label {
+      font-family: 'FuturaBookC';
+      font-size: 15px;
+      line-height: 20px;
+      color: rgba(255, 255, 255, 0.5);;
+    }
+    input {
+      width: 100%;
+      font-family: FuturaMediumC;
+      font-size: 18px;
+      line-height: 25px;
+      color: #FFFFFF;
+      border: none;
+      border-bottom: 1px solid rgba(54, 54, 54, 0.5);
+      background-color: $darkColor;
+    }
+    input[type=submit] {
+      position: relative;
+      top: 20px;
+      left: 120px;
+      width: 213px;
+      height: 51px;
+      font-family: FuturaDemiC;
+      font-size: 13px;
+      line-height: 18px;
+      text-align: center;
+      text-transform: uppercase;
+      color: $whiteColor;
+      background-color: $goldenColor;
+      &:hover {
+        cursor: pointer;
+        background-color: lighten($goldenColor, 10%);
+      }
+    }
   }
-  @media (max-width: 768px) {
-    display: none;
+}
+
+
+#agree--request {display: none;}
+.agree--request__label {
+  position: relative;
+  cursor: pointer;
+  &::before {
+    position: absolute;
+    top: 0;
+    left: -44px;
+    z-index: 1;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #5a5a5a;
+    content: "";
+  }
+}
+#agree--request:checked ~ label::before {background-color: $goldenColor;}
+
+.request__info__item:first-of-type {
+  left: 80%;
+  top: 10%;
+  &::before {
+    content: "01";
+  }
+}
+.request__info__item:nth-of-type(2) {
+  left: 95%;
+  top: 35%;
+  &::before {
+    content: "02";
+  }
+}
+.request__info__item:nth-of-type(3) {
+  left: 94%;
+  bottom: 30%;
+  &::before {
+    content: "03";
+  }
+}
+.request__info__item:last-of-type {
+  left: 80%;
+  bottom: 5%;
+  &::before {
+    content: "04";
+    box-shadow: none;
   }
 }
 // ______________________________________________________________________________________________
 // ----------------------------------------------------------------fantasies
 .fantasies {
   margin-top: 100px;
-  border: $temporaryBorder;
   background-image: linear-gradient(to bottom, $lightColor 10%,  $darkColor 10%, $darkColor 95%,  $lightColor 95%);
-  @media (max-width: 375px) {
+  @media (max-width: 768px) {
+    
     background-image: linear-gradient(to bottom, $lightColor 50%,  $darkColor 50%);
   };
   &__inner {
     padding: 0 8%;
     @include flex (space-between);
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
     @media (max-width: 375px) {
       flex-direction: column;
       padding: 0;
@@ -210,23 +744,64 @@
   &__left {
     width: 30%;
     height: 630px;
-    background-color: $thirdColor;
+    @media (max-width: 768px) {
+      width: 100%;
+      height: 65px;
+      margin-top: 24px;
+    }
     @media (max-width: 375px) {
       height: 65px;
       margin-bottom: 24px;
     }
+    & h3 {
+      margin-bottom: 48px;
+      font-family: Yeseva One;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 27px;
+      line-height: 37px;
+      text-transform: uppercase;
+      color: $goldenColor;
+      @media (max-width: 768px) {
+        width: 100%;
+        font-size: 22px;
+        line-height: 138.6%;
+        text-align: center;
+      }
+    }
   }
   &__list {
-    @media (max-width: 375px) {
+    @media (max-width: 768px) {
       display: none;
     }
   }
-  &__examples {
-    width: 60%;
-    height: 1000px;
-    background-color: $thirdColor;
+  &__item {
+    list-style: none;
+    font-family: Proxima Nova;
+    font-size: 20px;
+    line-height: 34px;
+    color: $whiteColor;
+    &:hover {
+      cursor: pointer;
+      color: $goldenColor;
+      border-bottom: 1px solid $goldenColor;
+    }
     @media (max-width: 768px) {
+    font-size: 16px;
+
+    }
+  }
+  &__examples {
+    display: grid;
+    grid-template: repeat(14, 70px) / repeat(2, 1fr);
+    width: 65%;
+    height: 1000px;
+    // background-color: $thirdColor;
+    @media (max-width: 768px) {
+      display: block;
+      width: 90%;
       height: 500px;
+      margin: 0 auto;
     }
     @media (max-width: 375px) {
       width: 95%;
@@ -234,91 +809,450 @@
     }
   }
 }
+
+.fantasies__pictures-1 {grid-area: 2/1/10/2;
+  @media (max-width: 768px){
+    width: 100%;
+    height: 242px;
+  // display: none;
+  }}
+.fantasies__pictures-2 {
+  grid-area: 11/1/14/2;
+  @media (max-width: 768px){
+  display: none;
+}}
+.fantasies__pictures-3 {
+  grid-area: 1/2/4/3;
+  @media (max-width: 1150px){
+  display: none;
+}}
+.fantasies__pictures-4 {
+  grid-area: 6/2/13/3;
+  @media (max-width: 1150px){
+    display: none;
+  }}
 // ______________________________________________________________________________________________
 // ----------------------------------------------------------------tariff
 .tariff {
+  height: 940px;
   margin-top: 100px;
   background-image: linear-gradient(to bottom, $lightColor 50%,  $darkColor 50%);
-  @media (max-width: 375px) {
-  background: $darkColor;
-  }
-  h3 {
+  @media (max-width: 768px) {
+    height: 2000px;
+    background: $darkColor;
+  } 
+  &__heading {
+    font-family: 'Yeseva One';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 28px;
     text-align: center;
+    text-transform: uppercase;
+    color: $darkColor;
+    @media (max-width: 768px) {
+      color: $whiteColor;
+    }
   }
-  p {
+  &__icon {
+    width: 114px;
+    margin: 13px auto;
+  }
+  &__text {
+    width: 50%;
+    margin: 0 auto 40px;
+    font-family: 'FuturaBookC';
+    font-size: 20px;
+    line-height: 27px;
     text-align: center;
-    margin-bottom: 40px;
+    color: $darkColor;
+    @media (max-width: 768px) {
+      color: $whiteColor;
+    }
   }
+  &__block {
+    align-items: flex-start;
+    @media (max-width: 768px) {
+      height: 1550px;
+    } 
+  }
+  &__box {
+    position: relative;
+    height: 421px;
+    @media (max-width: 768px) {
+      width: 100%;
+      height: 365px;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+  &__box--inner {
+    position: absolute;
+    top: 280px;
+    left: 20px;
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    padding: 25px 29px 49px 31px;
+    background-color: $whiteColor;
+    & h4 {
+      font-family: 'Yeseva One';
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 25px;
+      color: $darkColor;
+    }
+    @media (max-width: 768px) {
+      width: 80%;
+      left: 0;
+      max-height: 241px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  &__list {
+    margin-top: 13px;
+    margin-left: 13px;
+  }
+  &__list__item {
+    font-family: 'FuturaBookC';
+    font-size: 15px;
+    line-height: 25px;
+    color: #959595;
+    @media (max-width: 1000px) {
+      font-size: 13px;
+      line-height: 169.8%;
+    }
+  }
+  &__button {
+    width: 70%;
+    padding: 7px;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    font-family: 'Yeseva One';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+    text-transform: uppercase;
+    color: $whiteColor;
+    @media (max-width: 1000px) {
+      font-size: 12px;
+      line-height: 138.6%;
+    }
+  }
+}
+
+.tariff__box:first-child {
+  background-image: url('assets/img/tariff-img-1.png')
+}
+.tariff__box:nth-child(2) {
+  background-image: url('assets/img/tariff-img-2.png')
+}
+.tariff__box:last-child {
+  background-image: url('assets/img/tariff-img-3.png')
 }
 // ______________________________________________________________________________________________
 // ----------------------------------------------------------------goals
 .goals {
+  position: relative;
   width: 100%;
   height: 800px;
   margin: 0 auto;
   background-color: $darkColor;
   &__inner {
     display: grid;
-    grid-template: repeat(3, 70px) repeat(3, 120px) / 30% repeat(3, 22%);
-    grid-template-areas:  "g-heading . . ."
-                          ". g-table g-table g-table"
-                          "g-inf0-heading g-table g-table g-table"
-                          "g-inf0-text g-img g-img g-img"
-                          ". g-img g-img g-img"
-                          ". g-img g-img g-img";
-                          
+    grid-template: 180px 380px / 30% 60%;
+    grid-template-areas:  'zone1  zone2'
+                          'zone3  zone4';
     grid-gap: 1%;
     width: 90%;
     height: 686px;
     margin: 0 auto;
     padding-top: 30px;
-    border: $secondTemporaryBorder;
   }
+
   h3 {
-    grid-area: g-heading;
+    grid-area: zone1;
+    font-family: 'Yeseva One';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 27px;
+    line-height: 37px;
+    text-transform: uppercase;
+    color:$goldenColor;
   }
-  &__heading {
-    grid-area: g-inf0-heading;
+  &__info {
+    grid-area: zone3;
+  }
+  &__heaing {
+    font-family: 'Yeseva One';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 23px;
+    text-transform: uppercase;
+    color: $goldenColor;
   }
   &__text {
-    grid-area: g-inf0-text;
+    margin-top: 16px;
+    font-family: 'FuturaBookC';
+    font-size: 15px;
+    line-height: 25px;
+    color: $whiteColor;
+
   }
   &__table {
-    grid-area: g-table;
+    grid-area: zone2;
+    & tr {
+      height: 80px;
+    }
+    & td:hover {
+      cursor: pointer;
+      color: $whiteColor;
+    }
+    & span {
+      font-family: 'Yeseva One';
+      font-style: normal;
+      font-weight: normal;
+      font-size: 15px;
+      line-height: 21px;
+      text-transform: uppercase;
+      color: #959595;
+    }
+    & p {
+      font-family: 'FuturaBookC';
+      font-size: 15px;
+      line-height: 18px;
+      color: #959595;
+    }
   }
   &__imgs {
-    grid-area: g-img;
-    background-color: $thirdColor;
+    grid-area: zone4;
+    & img {
+    width: 100%;
   }
+}
   @media (max-width: 768px) {
     display: none;
+  }
+}
+
+.goals__arrows {
+  position: absolute;
+  width: 287px;
+  height: 14px;
+  left: 150px;
+  bottom: 240px;
+}
+.goals__button {
+  width: 50px;
+  height: 50px;
+}
+.button--arrow {
+  width: 41px;
+  height: 13px;
+  background-color: transparent;
+  border: none;
+  font-size: 28px;
+  &:hover {
+    background-color: transparent;
+    color: $goldenColor;
+  }
+}
+.button--circle {
+  width: 10px;
+  height: 10px;
+  background-color: $whiteColor;
+  border-radius:50%;
+  color: #959595;
+  &:hover {
+    color: $goldenColor;
   }
 }
 // ______________________________________________________________________________________________
 // ----------------------------------------------------------------team
 .team {
   background-image: linear-gradient(to bottom, $darkColor 50%, $lightColor 50%);
-  border: $temporaryBorder;
   padding-top: 75px;
   @media (max-width: 768px) {
+    height: 2000px;
     background: $darkColor;
-  }
-  h3, p {
+  } 
+  &__heading {
+    font-family: 'Yeseva One';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 28px;
     text-align: center;
+    text-transform: uppercase;
+    color: $whiteColor;
+  }
+  &__icon {
+    width: 114px;
+    margin: 13px auto;
+  }
+  &__text {
+    width: 40%;
+    margin: 0 auto;
+    font-family: 'FuturaBookC';
+    font-size: 20px;
+    line-height: 27px;
+    text-align: center;
+    color: $whiteColor;
+    &:last-of-type {
+      color: $darkColor;
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
   }
   &__block {
     width: 80%;
+    @media (max-width: 768px) {
+      height: 1550px;
+    } 
+  }
+  &__box {
+    position: relative;
+    height: 414px;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  &__box--inner {
+    position: absolute;
+    left: 5%;
+    bottom: -80px;
+    width: 90%;
+    height: 140px;
+    margin: 0 auto;
+    padding-top: 22px;
+    box-shadow: 1px 1px 15px #959595;
+    background-color: $whiteColor;
+    h4 {
+      margin-bottom: 10px;
+      font-family: 'Yeseva One';
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 25px;
+      text-align: center;
+      color: $darkColor;
+    }
+    p {
+      margin-bottom: 10px;
+      font-family: 'FuturaBookC';
+      font-size: 18px;
+      line-height: 26px;
+      text-align: center;
+      color: #959595;
+    }
+    button {
+      width: 100%;
+      font-family: 'Yeseva One';
+      font-style: normal;
+      font-weight: normal;
+      font-size: 13px;
+      line-height: 20px;
+      text-align: center;
+      text-transform: uppercase;
+      color: $whiteColor;
+    }
   }
 }
+
+.team__box:first-child {
+  background-image: url('assets/img/team-img-1.png')
+}
+.team__box:nth-child(2) {
+  background-image: url('assets/img/team-img-2.png')
+}
+.team__box:last-child {
+  background-image: url('assets/img/team-img-3.png')
+}
+.team__box--abs {
+  display: block;
+  position: absolute;
+  top: -35px;
+  left: -25px;
+  width: 70px;
+  height: 70px;
+  background-position: 50% 50%;
+
+}
+.team__box--abs1 {
+  background-image: url('assets/img/team-budg-1.png')
+}
+.team__box--abs2 {
+  background-image: url('assets/img/team-budg-2.png')
+}
+.team__box--abs3 {
+  background-image: url('assets/img/team-budg-3.png')
+}
+
 // ______________________________________________________________________________________________
 // ----------------------------------------------------------------clients
 .clients {
   margin-top: 88px;
   background-color: $lightColor;
-  border: $temporaryBorder;
-  h3, p {
+  &__heading {
+    font-family: 'Yeseva One';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 28px;
     text-align: center;
+    text-transform: uppercase;
+    color: $darkColor;
   }
+  &__icon {
+    width: 114px;
+    margin: 13px auto;
+  }
+  &__text {
+    width: 33%;
+    margin: 0 auto 20px;
+    font-family: 'FuturaBookC';
+    font-size: 20px;
+    line-height: 27px;
+    text-align: center;
+    color: $darkColor;
+  }
+  &__block {
+    height: 500px;
+    align-items: flex-start;
+  }
+  &__box {
+    height: 428px;
+    padding: 25px;
+    background-color: $whiteColor;
+    box-shadow: 1px 1px 15px #959595;
+    img {
+      float: left;
+    }
+    h5 {
+      margin-top: 20px;
+      margin-left: 100px;
+      font-family: 'Yeseva One';
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 23px;
+      color: $darkColor;
+    }
+    p {
+      margin-top: 50px;
+      text-transform: lowercase;
+      font-family: 'FuturaBookC';
+      font-size: 15px;
+      line-height: 180%;
+      color: #959595;
+    }
+  }
+  
   @media (max-width: 768px) {
     display: none;
   }
@@ -328,34 +1262,123 @@
 .questions {
   margin-top: 115px;
   background-image: linear-gradient(to bottom, $lightColor 50%, $darkColor 50%);
-  border: $temporaryBorder;
+  &__heading {
+    font-family: 'Yeseva One';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 28px;
+    text-align: center;
+    text-transform: uppercase;
+    color: $whiteColor;
+  }
   &__form {
+    @include flex (space-evenly);
+    flex-direction: column;
     width: 883px;
     height: 445px;
     margin: 0 auto;
-    background-color: $thirdColor;
+    background-color: $darkColor;
     @media (max-width: 1000px) {
       width: 90%;
     }
     @media (max-width: 768px) {
       width: 100%;
     }
+    div {
+      width: 60%;
+    }
+    label {
+      font-family: 'FuturaBookC';
+      font-size: 15px;
+      line-height: 20px;
+      color: rgba(255, 255, 255, 0.5);;
+    }
+    input {
+      width: 100%;
+      font-family: FuturaMediumC;
+      font-size: 18px;
+      line-height: 25px;
+      color: #FFFFFF;
+      border: none;
+      border-bottom: 1px solid rgba(54, 54, 54, 0.5);
+      background-color: $darkColor;
+    }
+    input[type=submit] {
+      position: relative;
+      top: 20px;
+      left: 120px;
+      width: 213px;
+      height: 51px;
+      font-family: FuturaDemiC;
+      font-size: 13px;
+      line-height: 18px;
+      text-align: center;
+      text-transform: uppercase;
+      color: $whiteColor;
+      background-color: $goldenColor;
+      @media (max-width: 500px) {
+        left: 50px;
+      }
+      &:hover {
+        cursor: pointer;
+        background-color: lighten($goldenColor, 10%);
+      }
+    }
   }
 }
+
+#agree--questions {display: none;}
+.agree--questions__label {
+  position: relative;
+  cursor: pointer;
+  &::before {
+    position: absolute;
+    top: 0;
+    left: -44px;
+    z-index: 1;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #5a5a5a;
+    content: "";
+  }
+}
+#agree--questions:checked ~ label::before {background-color: $goldenColor;}
 // ______________________________________________________________________________________________
 // ----------------------------------------------------------------contacts
 .contacts {
   padding-top: 52px;
   background: $darkColor;
-  border: $temporaryBorder;
+  &__inner {
+    @include flex (space-between);
+    flex-direction: column;
+    @media (max-width: 768px) {
+      flex-direction: column-reverse;
+    }
+  }
   p {
+    width: 40%;
+    margin: 0 auto 30px;
+    font-family: Yeseva One;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 28px;
     text-align: center;
+    text-transform: uppercase;
+    color: $goldenColor;
+    @media (max-width: 768px) {
+      width: 90%;
+    }
   }
   &__map {
     display: block;
     width: 80%;
     height: 460px;
-    margin: 90px auto;
+    margin: 0 auto; 
+    @media (max-width: 500px) {
+      height: 255px;
+    }
     background-color: $thirdColor;
     @media (max-width: 768px) {
       width: 95%;
@@ -366,10 +1389,8 @@
 // ______________________________________________________________________________________________
 // ----------------------------------------------------------------footer
 footer {
-  position:relative;
   background-color: $darkColor;
   height: 135px;
-  border: $temporaryBorder;
   @media (max-width: 375px) {
     display: none;
   }
